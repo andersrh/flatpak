@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>com.binance.desktop</id>
+  <name>Binance Desktop</name>
+  <developer_name>Binance</developer_name>
+  <summary>Crypto currency exchange</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <url type="homepage">https://binance.com/</url>
+  <url type="bugtracker">https://github.com/flathub/com.binance.desktop/issues</url>
+  <description>
+    <p>
+      Binance is the largest crypto currency exchange and this is the Binance Desktop app as a flatpak.
+    </p>
+    <p>
+    Note: This flatpak is maintained by the Flathub community, and is not necessarily endorsed or officially maintained by Binance.
+    </p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://bin.bnbstatic.com/static/images/electron/electron-enhance.png</image> 
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="1.45.2" date="2023-07-01"/>
+  </releases>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="violence-desecration">none</content_attribute>
+    <content_attribute id="violence-slavery">none</content_attribute>
+    <content_attribute id="violence-worship">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="sex-homosexuality">none</content_attribute>
+    <content_attribute id="sex-prostitution">none</content_attribute>
+    <content_attribute id="sex-adultery">none</content_attribute>
+    <content_attribute id="sex-appearance">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">intense</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">intense</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">intense</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+  <provides>
+    <id>com.binance.desktop</id>
+  </provides>
+  <update_contact>andersr+flatpakmaintainer@rytter.me</update_contact>
+</component>

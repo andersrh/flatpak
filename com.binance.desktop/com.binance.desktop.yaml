@@ -1,0 +1,72 @@
+app-id: com.binance.desktop
+base: org.electronjs.Electron2.BaseApp
+base-version: '22.08'
+runtime: org.freedesktop.Platform
+runtime-version: '22.08'
+sdk: org.freedesktop.Sdk
+command: binance-desktop
+separate-locales: false
+rename-desktop-file: binance.desktop
+rename-icon: binance
+finish-args:
+  # X11 performance
+  - --share=ipc
+  # We need X11
+  - --socket=x11
+  # Access to wayland
+  - --socket=wayland
+  # Audio Access
+  - --socket=pulseaudio
+  # Network Access
+  - --share=network
+  # GPU acceleration
+  - --device=dri
+  # We need to send notifications
+  - --talk-name=org.freedesktop.Notifications
+  - --talk-name=org.gnome.Mutter.IdleMonitor
+  - --talk-name=org.kde.StatusNotifierWatcher
+  - --talk-name=com.canonical.AppMenu.Registrar
+  - --talk-name=com.canonical.indicator.application
+  - --talk-name=org.ayatana.indicator.application
+  # Allow advanced input methods
+  - --talk-name=org.freedesktop.portal.Fcitx
+  # Use Wayland if available
+  - --env=USE_WAYLAND=1
+  # Fix cursor size on HiDPI screens on Wayland
+  - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
+
+modules:
+  - name: binance-desktop
+    buildsystem: simple
+    build-commands:
+      - install -Dm0755 binance-desktop.sh "${FLATPAK_DEST}/bin/binance-desktop"
+      - install -Dm0644 "${FLATPAK_ID}.metainfo.xml" "${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml"
+      - |
+        bsdtar -Oxf binance-desktop.deb 'data.tar.xz' |
+          bsdtar -xf - \
+            --exclude='./usr/share/doc'
+      - mv opt/* "${FLATPAK_DEST}"
+      - install -Dm0644 "usr/share/applications/binance.desktop" "${FLATPAK_DEST}/share/applications/binance.desktop"
+      - desktop-file-edit --set-key=Exec --set-value='binance-desktop %U' "${FLATPAK_DEST}/share/applications/binance.desktop"
+      - |
+        for size in 16 24 32 48 64 128 256 512; do
+          install -Dm0644 "usr/share/icons/hicolor/${size}x${size}/apps/binance.png" "${FLATPAK_DEST}/share/icons/hicolor/${size}x${size}/apps/binance.png"
+        done
+      - desktop-file-edit --set-key=Icon --set-value="binance" "${FLATPAK_DEST}/share/applications/binance.desktop"
+    sources:
+      - type: file
+        dest-filename: binance-desktop.deb
+        url: https://download.binance.com/electron-desktop/linux/production/binance-amd64-linux.deb
+        sha256: ec42f03b482d36dd7d6b5dd9576aa461163f60fd72a281e011cb0bd33b82fe9b
+        x-checker-data:
+          type: debian-repo
+          package-name: binance
+          root: https://download.binance.com/desktop/apt
+          dist: xenial
+          component: main
+        only-arches:
+          - x86_64
+      - type: file
+        path: binance-desktop.sh
+      - type: file
+        path: com.binance.desktop.metainfo.xml
