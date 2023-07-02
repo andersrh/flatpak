@@ -6,7 +6,7 @@
   <summary>Crypto currency exchange</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <url type="homepage">https://binance.com/</url>
-  <url type="bugtracker">https://github.com/flathub/com.binance.desktop/issues</url>
+  <url type="bugtracker">https://github.com/andersrh/flatpak/issues</url>
   <description>
     <p>
       Binance is the largest crypto currency exchange and this is the Binance Desktop app as a flatpak.
