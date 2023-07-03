@@ -5,6 +5,7 @@
   <developer_name>Binance</developer_name>
   <summary>Crypto currency exchange</summary>
   <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
   <url type="homepage">https://binance.com/</url>
   <url type="bugtracker">https://github.com/andersrh/flatpak/issues</url>
   <description>
