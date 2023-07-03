@@ -21,15 +21,6 @@ finish-args:
   - --share=network
   # GPU acceleration
   - --device=dri
-  # We need to send notifications
-  - --talk-name=org.freedesktop.Notifications
-  - --talk-name=org.gnome.Mutter.IdleMonitor
-  - --talk-name=org.kde.StatusNotifierWatcher
-  - --talk-name=com.canonical.AppMenu.Registrar
-  - --talk-name=com.canonical.indicator.application
-  - --talk-name=org.ayatana.indicator.application
-  # Allow advanced input methods
-  - --talk-name=org.freedesktop.portal.Fcitx
   # Use Wayland if available
   - --env=USE_WAYLAND=1
   # Fix cursor size on HiDPI screens on Wayland
