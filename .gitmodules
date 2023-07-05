@@ -1,0 +1,3 @@
+[submodule "com.anydesk.Anydesk"]
+	path = com.anydesk.Anydesk
+	url = https://github.com/andersrh/com.anydesk.Anydesk.git
